@@ -11,21 +11,13 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["localhost://3000", "https://siva-mern-task.onrender.com"],
+    origin: ["http://localhost:3000", "https://siva-mern-task.onrender.com"],
   })
 );
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use("/api/tasks", router);
-
-// app.post("/api/tasks", (req, res) => {
-//     const { name, completed } = req.body;
-//     console.log(name);
-//     console.log(completed);
-//     res.send("create task request");
-
-// });
 
 const PORT = process.env.PORT || 5000;
 
